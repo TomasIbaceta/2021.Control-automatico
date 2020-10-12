@@ -10,15 +10,18 @@ alfa = 2; %coeficiente
 
 %------ DATOS CONTROLADOR ------
 
-K_c = 1;
-c = -0.1;
-p = -1;
+K_c = 0.0095448; %Tanteado con SISOTOOL
+c = -12.22; %Tanteado con SISOTOOL
+p = 0; %MATEMATICAMENTE CORRECTO
 
-%----- ANALISIS CON SISO-TOOL -------
+%------ Datos de entradas -----
+
+r = 2;
+
+%----- ANALISIS SISO-TOOL DE LA PLANTA -------
 s = tf ('s');
 C = K_c * (s-c)/ (s-p)
 G_o = K_g * omega_n^2 * ((-1)*alfa*s + 1) / (s^2 + 2*xi*omega_n*s + omega_n^2)
-
 sisotool(G_o, C)
 
 
