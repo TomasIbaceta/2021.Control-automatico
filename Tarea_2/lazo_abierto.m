@@ -18,6 +18,14 @@ Tau = sqrt(1/(Limite_u * K_c));
 Per_A = 0.1;
 Per_freq = 5;
 
+%----- DATOS FEEDFORWARD ----
+
+%(s*B0)+B1 / 
+%(Tau*s + 1)
+Kff_B0 = -309/9898; 
+Kff_B1 = 16/10605;
+Kff_Tau = 0.1;
+
 %---- SIMULACION -----
 
 open("controlador_lazo_abierto.slx")

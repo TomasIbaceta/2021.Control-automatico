@@ -25,8 +25,11 @@ D_ph = pi/2; %perturbacion salida ->fase
 %----- ANALISIS SISO-TOOL DE LA PLANTA -------
 
 s = tf ('s');
-C = K_c * (s-c)/ (s-p)
-G_o = K_g * omega_n^2 * ((-1)*alfa*s + 1) / (s^2 + 2*xi*omega_n*s + omega_n^2)
-%sisotool(G_o, C)
+C = K_c * (s-c)/ ...
+    (s-p)
+
+G_o = (K_g * omega_n^2 * ((-1)*alfa*s + 1)) / ... 
+      (s^2 + 2*xi*omega_n*s + omega_n^2)
+sisotool(G_o, C)
 %open("controlador_lazo_cerrado.slx")
 
