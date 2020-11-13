@@ -32,6 +32,6 @@ G_o = (K_g * omega_n^2 * ((-1)*alfa*s + 1)) / ...
       (s^2 + 2*xi*omega_n*s + omega_n^2)
 
 %------ DESCOMENTAR SEGÚN NECESIDAD.
-sisotool(G_o, C)
-%open("controlador_lazo_cerrado.slx")
+%sisotool(G_o, C)
+open("controlador_lazo_cerrado.slx")
 
